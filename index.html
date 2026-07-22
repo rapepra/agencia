@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ConstructIA — Domina tu Ciudad con IA & SEO Local para Empresas de Reformas</title>
+  <meta name="description" content="La única agencia que posiciona tu empresa de construcción, reformas o fontanería en Google Maps Y en ChatGPT, Gemini y Perplexity. Ecosistema completo de captación con IA. Auditoría gratuita." />
+  <meta name="keywords" content="agencia marketing reformas, marketing para empresas de construccion, como conseguir clientes de reformas, seo local para fontaneros, publicidad para contratistas, generador de presupuestos construccion ia, posicionamiento geo ia" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="ConstructIA — Domina tu Ciudad con IA & SEO Local" />
+  <meta property="og:description" content="Hacemos que ChatGPT, Gemini y Perplexity citen a tu empresa como la #1 de tu ciudad." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dark': '#0B0F17',
+            'surface': '#111827',
+            'surface2': '#1F2937',
+            'emerald-neon': '#00FF87',
+            'cyan-ia': '#06B6D4',
+          },
+          fontFamily: {
+            'inter': ['Inter', 'sans-serif'],
+            'grotesk': ['Space Grotesk', 'sans-serif'],
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+            'float': 'float 6s ease-in-out infinite',
+            'scan': 'scan 3s ease-in-out infinite',
+            'build-up': 'buildUp 0.5s ease-out forwards',
+            'typing': 'typing 0.05s steps(1) forwards',
+            'blink': 'blink 1s step-end infinite',
+            'slide-up': 'slideUp 0.6s ease-out forwards',
+          },
+          keyframes: {
+            glow: { '0%': { boxShadow: '0 0 10px rgba(16,185,129,0.3)' }, '100%': { boxShadow: '0 0 30px rgba(16,185,129,0.6), 0 0 60px rgba(16,185,129,0.2)' } },
+            float: { '0%, 100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-12px)' } },
+            scan: { '0%': { transform: 'translateY(100%)' }, '100%': { transform: 'translateY(-100%)' } },
+            slideUp: { '0%': { opacity: '0', transform: 'translateY(30px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            blink: { '0%, 100%': { opacity: '1' }, '50%': { opacity: '0' } },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0B0F17;
+      --emerald: #10B981;
+      --emerald-bright: #00FF87;
+      --cyan: #06B6D4;
+      --blue: #3B82F6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      background-color: var(--bg);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    /* Grid pattern background */
+    .grid-bg {
+      background-image: linear-gradient(to right, rgba(31,41,55,0.3) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(31,41,55,0.3) 1px, transparent 1px);
+      background-size: 4rem 4rem;
+    }
+    
+    /* Glassmorphism */
+    .glass {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-strong {
+      background: rgba(17, 24, 39, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Glow effects */
+    .btn-glow {
+      box-shadow: 0 0 25px rgba(16, 185, 129, 0.3);
+      transition: all 0.3s ease;
+    }
+    .btn-glow:hover {
+      box-shadow: 0 0 40px rgba(16, 185, 129, 0.6), 0 0 80px rgba(16, 185, 129, 0.2);
+      transform: translateY(-2px);
+    }
+    .card-hover {
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .card-hover:hover {
+      border-color: rgba(16, 185, 129, 0.4);
+      box-shadow: 0 0 30px rgba(16, 185, 129, 0.1), inset 0 0 30px rgba(16, 185, 129, 0.03);
+      transform: translateY(-4px);
+    }
+    
+    /* Text gradients */
+    .text-gradient-emerald {
+      background: linear-gradient(135deg, #ffffff 0%, #d1fae5 50%, #10B981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .text-gradient-cyan {
+      background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Ambient glows */
+    .glow-emerald { 
+      position: absolute;
+      background: radial-gradient(ellipse at center, rgba(16,185,129,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .glow-cyan {
+      position: absolute;
+      background: radial-gradient(ellipse at center, rgba(6,182,212,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .glow-blue {
+      position: absolute;
+      background: radial-gradient(ellipse at center, rgba(59,130,246,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* --- BUILDING ANIMATION SVG --- */
+    .building-svg-wrapper {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    /* Floors animate in sequence */
+    .floor-0 { animation: buildFloor 0.5s 0.2s ease-out both; }
+    .floor-1 { animation: buildFloor 0.5s 0.7s ease-out both; }
+    .floor-2 { animation: buildFloor 0.5s 1.2s ease-out both; }
+    .floor-3 { animation: buildFloor 0.5s 1.7s ease-out both; }
+    .floor-4 { animation: buildFloor 0.5s 2.2s ease-out both; }
+    .floor-5 { animation: buildFloor 0.5s 2.7s ease-out both; }
+    .floor-6 { animation: buildFloor 0.5s 3.2s ease-out both; }
+    .floor-7 { animation: buildFloor 0.5s 3.7s ease-out both; }
+    .roof-cap { animation: buildFloor 0.5s 4.2s ease-out both; }
+
+    @keyframes buildFloor {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Scan line rising over building */
+    .scan-line {
+      animation: scanBuilding 4s 4.8s ease-in-out infinite;
+    }
+    @keyframes scanBuilding {
+      0%   { transform: translateY(260px); opacity: 0; }
+      10%  { opacity: 0.8; }
+      90%  { opacity: 0.8; }
+      100% { transform: translateY(0px); opacity: 0; }
+    }
+
+    /* Glow pulsing on windows */
+    .win-glow { animation: winPulse 2s 5s ease-in-out infinite alternate; }
+    @keyframes winPulse {
+      from { fill-opacity: 0.6; }
+      to   { fill-opacity: 1; filter: drop-shadow(0 0 6px #10B981); }
+    }
+
+    /* Terminal typing cursor */
+    .cursor::after {
+      content: '|';
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0B0F17; }
+    ::-webkit-scrollbar-thumb { background: #10B981; border-radius: 4px; }
+
+    /* Badge pulse ring */
+    .badge-ring {
+      animation: ringPulse 2s ease-out infinite;
+    }
+    @keyframes ringPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(16,185,129,0.4); }
+      70%  { box-shadow: 0 0 0 10px rgba(16,185,129,0); }
+      100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+    }
+
+    /* Progress bar transition */
+    .progress-bar { transition: width 0.5s ease; }
+
+    /* FAQ accordion */
+    [x-show] { transition: all 0.3s ease; }
+
+    /* Mobile floating bar */
+    .mobile-bar {
+      background: linear-gradient(135deg, rgba(17,24,39,0.98) 0%, rgba(11,15,23,0.98) 100%);
+      border-top: 1px solid rgba(16,185,129,0.3);
+      backdrop-filter: blur(20px);
+    }
+
+    /* Exit intent modal */
+    .modal-overlay {
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(6px);
+    }
+
+    /* Neon border on inputs */
+    .input-neon {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #fff;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .input-neon:focus {
+      outline: none;
+      border-color: #10B981;
+      box-shadow: 0 0 15px rgba(16,185,129,0.2);
+    }
+
+    /* ROI number counter */
+    .roi-value {
+      font-variant-numeric: tabular-nums;
+      transition: all 0.3s ease;
+    }
+
+    /* Tech logos marquee */
+    .marquee-track {
+      animation: marquee 20s linear infinite;
+      white-space: nowrap;
+    }
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Section entrance */
+    .appear {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.7s ease;
+    }
+    .appear.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "ConstructIA — Agencia de Marketing Digital para Reformas y Construcción",
+    "description": "Agencia especializada en posicionamiento GEO (Generative Engine Optimization), SEO local y software SaaS de presupuestos con IA para empresas de construcción, reformas, fontanería y electricidad.",
+    "url": "https://constructia.es",
+    "areaServed": "España",
+    "serviceType": ["GEO Marketing", "SEO Local", "Diseño Web de Alta Conversión", "Software SaaS de Presupuestos con IA"],
+    "offers": {
+      "@type": "Offer",
+      "name": "Auditoría de Visibilidad IA Gratuita",
+      "price": "0",
+      "priceCurrency": "EUR"
+    }
+  }
+  </script>
+</head>
+
+<body class="bg-dark text-white font-inter antialiased" x-data="app()" @mouseleave.document="handleMouseLeave($event)">
+
+<!-- NAVIGATION / HEADER -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-strong" role="banner">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between" aria-label="Navegación principal">
+    <a href="#hero" id="logo-link" class="flex items-center gap-2 group">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center shadow-lg group-hover:shadow-emerald-500/30 transition-all duration-300">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+        </svg>
+      </div>
+      <span class="font-grotesk font-700 text-lg text-white">Construct<span class="text-gradient-emerald">IA</span></span>
+    </a>
+
+    <div class="hidden md:flex items-center gap-6 text-sm text-gray-400">
+      <a href="#geo-demo" id="nav-geo" class="hover:text-emerald-400 transition-colors duration-200">Demo GEO</a>
+      <a href="#pilares" id="nav-pilares" class="hover:text-emerald-400 transition-colors duration-200">Pilares</a>
+      <a href="#comparativa" id="nav-comp" class="hover:text-emerald-400 transition-colors duration-200">Comparativa</a>
+      <a href="#casos-exito" id="nav-casos" class="hover:text-emerald-400 transition-colors duration-200">Casos de Éxito</a>
+      <a href="#faq" id="nav-faq" class="hover:text-emerald-400 transition-colors duration-200">FAQ</a>
+    </div>
+
+    <a href="#auditoria" id="nav-cta" class="btn-glow hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500 text-white text-sm font-semibold hover:bg-emerald-400 transition-all duration-300">
+      <span>Auditoría IA Gratuita</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+    </a>
+
+    <button @click="mobileMenu = !mobileMenu" class="md:hidden text-gray-400 hover:text-white transition-colors" aria-label="Abrir menú">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </nav>
+
+  <div x-show="mobileMenu" x-transition class="md:hidden glass-strong border-t border-white/10 px-4 py-4 space-y-3 text-sm text-gray-400">
+    <a href="#geo-demo" @click="mobileMenu=false" class="block hover:text-emerald-400 transition-colors">Demo GEO</a>
+    <a href="#pilares" @click="mobileMenu=false" class="block hover:text-emerald-400 transition-colors">Pilares</a>
+    <a href="#comparativa" @click="mobileMenu=false" class="block hover:text-emerald-400 transition-colors">Comparativa</a>
+    <a href="#casos-exito" @click="mobileMenu=false" class="block hover:text-emerald-400 transition-colors">Casos de Éxito</a>
+    <a href="#auditoria" @click="mobileMenu=false" class="block mt-2 px-4 py-2 rounded-lg bg-emerald-500 text-white font-semibold text-center btn-glow">Auditoría IA Gratuita</a>
+  </div>
+</header>
+
+<!-- HERO SECTION + EDIFICIO 3D -->
+<section id="hero" class="relative min-h-screen flex items-center grid-bg overflow-hidden pt-16" aria-label="Sección principal">
+  <div class="glow-emerald" style="width:700px;height:700px;top:-150px;left:-200px;opacity:0.7;"></div>
+  <div class="glow-cyan" style="width:500px;height:500px;bottom:0;right:-100px;opacity:0.5;"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-16 items-center">
+    
+    <div class="space-y-8">
+      <div class="inline-flex items-center gap-2">
+        <span class="badge-ring inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-emerald-500/30 text-emerald-400 text-sm font-medium">
+          🚀 <span>La Única Agencia que Posiciona en Google <strong>e Inteligencia Artificial</strong></span>
+        </span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
+        <span class="text-white">Domina tu Ciudad.</span><br/>
+        <span class="text-gradient-emerald">Haz que Google y las IAs</span><br/>
+        <span class="text-white">Recomienden tu Empresa.</span>
+      </h1>
+
+      <p class="text-lg sm:text-xl text-gray-400 leading-relaxed max-w-xl">
+        Unimos <strong class="text-white">Webs de Ultra-Conversión</strong>, Posicionamiento <strong class="text-emerald-400">GEO/SEO Local</strong> y nuestro <strong class="text-cyan-400">Estimador SaaS con IA</strong> para llenar tu agenda de clientes cualificados que ya buscan contratar.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#auditoria" id="hero-cta-primary" class="btn-glow flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-emerald-500 text-white font-bold text-base hover:bg-emerald-400 transition-all duration-300">
+          Pedir Auditoría IA Gratuita
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+        <a href="#geo-demo" id="hero-cta-secondary" class="glass flex items-center justify-center gap-2 px-6 py-4 rounded-xl border border-white/20 text-white font-semibold text-base hover:border-emerald-500/50 hover:text-emerald-400 transition-all duration-300">
+          <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          Ver Demo GEO en Vivo
+        </a>
+      </div>
+
+      <div class="flex flex-wrap gap-6 pt-4 border-t border-white/10">
+        <div class="text-center">
+          <div class="text-2xl font-black text-gradient-emerald">+350%</div>
+          <div class="text-xs text-gray-500">Conversión Media</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-black text-gradient-cyan">60s</div>
+          <div class="text-xs text-gray-500">Presupuesto Automático</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-black text-white">+50</div>
+          <div class="text-xs text-gray-500">Empresas Liderando</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-black text-emerald-400">#1</div>
+          <div class="text-xs text-gray-500">en Gemini & ChatGPT</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Building SVG Animation -->
+    <div class="flex justify-center items-center relative" aria-label="Animación de construcción de edificio digital">
+      <div class="building-svg-wrapper relative">
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-64 h-16 bg-emerald-500/20 blur-3xl rounded-full"></div>
+
+        <svg width="360" height="420" viewBox="0 0 360 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rascacielos digital siendo construido piso a piso con colores neón">
+
+          <g class="floor-0">
+            <ellipse cx="180" cy="380" rx="140" ry="20" fill="rgba(16,185,129,0.08)" stroke="#10B981" stroke-width="1"/>
+            <path d="M100 370 L180 385 L260 370 L180 355 Z" fill="#0d2018" stroke="#10B981" stroke-width="1.5"/>
+            <path d="M100 370 L100 380 L180 395 L180 385 Z" fill="#071a0f" stroke="#10B981" stroke-width="1"/>
+            <path d="M260 370 L260 380 L180 395 L180 385 Z" fill="#0a1f14" stroke="#10B981" stroke-width="1"/>
+          </g>
+
+          <g class="floor-1">
+            <path d="M115 340 L180 355 L245 340 L180 325 Z" fill="#0d2018" stroke="#10B981" stroke-width="1.5"/>
+            <path d="M115 340 L115 370 L180 385 L180 355 Z" fill="#071a0f" stroke="#10B981" stroke-width="1"/>
+            <path d="M245 340 L245 370 L180 385 L180 355 Z" fill="#091c12" stroke="#10B981" stroke-width="1"/>
+            <rect x="122" y="343" width="12" height="8" rx="1" fill="#10B981" class="win-glow" opacity="0.7"/>
+            <rect x="140" y="343" width="12" height="8" rx="1" fill="#10B981" class="win-glow" opacity="0.5"/>
+            <rect x="158" y="343" width="12" height="8" rx="1" fill="#06B6D4" opacity="0.6"/>
+            <rect x="213" y="343" width="12" height="8" rx="1" fill="#10B981" opacity="0.7"/>
+            <text x="180" y="350" text-anchor="middle" font-size="7" fill="#10B981" opacity="0.8" font-family="Inter">GEO &amp; SEO LOCAL</text>
+          </g>
+
+          <g class="floor-2">
+            <path d="M120 312 L180 327 L240 312 L180 297 Z" fill="#0d2018" stroke="#10B981" stroke-width="1.5"/>
+            <path d="M120 312 L120 340 L180 355 L180 327 Z" fill="#071a0f" stroke="#10B981" stroke-width="1"/>
+            <path d="M240 312 L240 340 L180 355 L180 327 Z" fill="#091c12" stroke="#10B981" stroke-width="1"/>
+            <rect x="127" y="315" width="10" height="7" rx="1" fill="#10B981" class="win-glow" opacity="0.6"/>
+            <rect x="214" y="315" width="10" height="7" rx="1" fill="#06B6D4" class="win-glow" opacity="0.6"/>
+          </g>
+
+          <g class="floor-3">
+            <path d="M124 285 L180 300 L236 285 L180 270 Z" fill="#0d2018" stroke="#06B6D4" stroke-width="1.5"/>
+            <path d="M124 285 L124 312 L180 327 L180 300 Z" fill="#071826" stroke="#06B6D4" stroke-width="1"/>
+            <path d="M236 285 L236 312 L180 327 L180 300 Z" fill="#091522" stroke="#06B6D4" stroke-width="1"/>
+            <rect x="130" y="287" width="10" height="7" rx="1" fill="#06B6D4" class="win-glow" opacity="0.7"/>
+            <text x="180" y="292" text-anchor="middle" font-size="6.5" fill="#06B6D4" opacity="0.9" font-family="Inter">WEB CONVERSIÓN</text>
+          </g>
+
+          <g class="floor-4">
+            <path d="M128 258 L180 273 L232 258 L180 243 Z" fill="#0d2018" stroke="#10B981" stroke-width="1.5"/>
+            <path d="M128 258 L128 285 L180 300 L180 273 Z" fill="#071a0f" stroke="#10B981" stroke-width="1"/>
+            <path d="M232 258 L232 285 L180 300 L180 273 Z" fill="#091c12" stroke="#10B981" stroke-width="1"/>
+          </g>
+
+          <g class="floor-5">
+            <path d="M131 232 L180 247 L229 232 L180 217 Z" fill="#0d2018" stroke="#06B6D4" stroke-width="1.5"/>
+            <path d="M131 232 L131 258 L180 273 L180 247 Z" fill="#071826" stroke="#06B6D4" stroke-width="1"/>
+            <path d="M229 232 L229 258 L180 273 L180 247 Z" fill="#091522" stroke="#06B6D4" stroke-width="1"/>
+          </g>
+
+          <g class="floor-6">
+            <path d="M134 208 L180 223 L226 208 L180 193 Z" fill="#0d2018" stroke="#10B981" stroke-width="1.5"/>
+            <path d="M134 208 L134 232 L180 247 L180 223 Z" fill="#071a0f" stroke="#10B981" stroke-width="1"/>
+            <path d="M226 208 L226 232 L180 247 L180 223 Z" fill="#091c12" stroke="#10B981" stroke-width="1"/>
+          </g>
+
+          <g class="floor-7">
+            <path d="M140 185 L180 198 L220 185 L180 172 Z" fill="#0d2018" stroke="#00FF87" stroke-width="2"/>
+            <path d="M140 185 L140 208 L180 221 L180 198 Z" fill="#071a0f" stroke="#00FF87" stroke-width="1.5"/>
+            <path d="M220 185 L220 208 L180 221 L180 198 Z" fill="#091c12" stroke="#00FF87" stroke-width="1.5"/>
+            <text x="180" y="193" text-anchor="middle" font-size="7" fill="#00FF87" font-weight="bold" font-family="Inter">SAAS IA 💡</text>
+          </g>
+
+          <g class="roof-cap">
+            <path d="M148 175 L180 163 L212 175 L180 187 Z" fill="#0d2018" stroke="#00FF87" stroke-width="2"/>
+            <line x1="180" y1="163" x2="180" y2="120" stroke="#10B981" stroke-width="2"/>
+            <circle cx="180" cy="116" r="4" fill="#00FF87"/>
+            <circle cx="180" cy="116" r="8" fill="none" stroke="#00FF87" stroke-width="1" opacity="0.5">
+              <animate attributeName="r" values="8;16;8" dur="2s" repeatCount="indefinite"/>
+            </circle>
+
+            <g opacity="0" style="animation: buildFloor 0.5s 5s ease-out both;">
+              <rect x="90" y="70" width="52" height="22" rx="4" fill="rgba(6,182,212,0.15)" stroke="rgba(6,182,212,0.5)" stroke-width="1"/>
+              <text x="116" y="85" text-anchor="middle" font-size="8" fill="#06B6D4" font-family="Inter" font-weight="600">Gemini #1</text>
+            </g>
+            <g opacity="0" style="animation: buildFloor 0.5s 5.4s ease-out both;">
+              <rect x="218" y="60" width="60" height="22" rx="4" fill="rgba(16,185,129,0.15)" stroke="rgba(16,185,129,0.5)" stroke-width="1"/>
+              <text x="248" y="75" text-anchor="middle" font-size="8" fill="#10B981" font-family="Inter" font-weight="600">ChatGPT #1</text>
+            </g>
+          </g>
+
+          <rect class="scan-line" x="100" y="0" width="160" height="3" rx="1" fill="url(#scanGradient)" opacity="0.85"/>
+          <defs>
+            <linearGradient id="scanGradient" x1="0" y1="0" x2="160" y2="0" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="transparent"/>
+              <stop offset="50%" stop-color="#00FF87"/>
+              <stop offset="100%" stop-color="transparent"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <p class="text-center text-xs text-emerald-500/70 mt-2 font-mono tracking-widest">[ SISTEMA IA EN CONSTRUCCIÓN ]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GEO DEMO -->
+<section id="geo-demo" class="relative py-24 overflow-hidden" aria-label="Demostración del sistema GEO">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 appear">
+      <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold text-cyan-400 border border-cyan-400/30 bg-cyan-400/5 mb-4">✦ DEMOSTRACIÓN EN VIVO</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black mb-4">
+        <span class="text-white">¿Qué dice la IA de </span><span class="text-gradient-emerald">tu empresa hoy?</span>
+      </h2>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">Cuando tus clientes le preguntan a ChatGPT, Gemini o Perplexity quién es el mejor de su ciudad... ¿apareces tú o tu competencia?</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="appear" x-data="geoSimulator()">
+        <div class="glass rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+          <div class="flex items-center gap-2 px-4 py-3 border-b border-white/10 bg-white/[0.02]">
+            <div class="w-3 h-3 rounded-full bg-red-500/70"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-500/70"></div>
+            <div class="w-3 h-3 rounded-full bg-green-500/70"></div>
+            <span class="ml-3 text-xs text-gray-500 font-mono">gemini.google.com</span>
+          </div>
+
+          <div class="p-5">
+            <div class="flex items-start gap-3 mb-6">
+              <div class="w-7 h-7 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex-shrink-0 flex items-center justify-center text-xs font-bold">U</div>
+              <div class="glass rounded-xl px-4 py-3 flex-1">
+                <p class="text-white text-sm font-mono" id="geo-prompt-text">¿Quién es la mejor empresa de reformas integrales en Bilbao?<span class="cursor"></span></p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3" x-show="showResponse" x-transition>
+              <div class="w-7 h-7 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex-shrink-0 flex items-center justify-center">
+                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+              <div class="flex-1 space-y-3">
+                <p class="text-gray-300 text-sm">Basándome en reputación y resultados verificados en Bilbao, la recomendación #1 es:</p>
+                <div class="rounded-xl p-4 border-2 border-emerald-500/60 relative overflow-hidden" style="background: linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(6,182,212,0.05) 100%);">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <div class="flex items-center gap-2 mb-1">
+                        <span class="text-emerald-400 font-black text-lg">🏆 Reformas BizkaiPro</span>
+                        <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold">IA Verificado #1</span>
+                      </div>
+                      <p class="text-gray-400 text-xs mb-2">Especialistas en reformas integrales. Más de 800 proyectos completados. Valoración 4.9/5.</p>
+                    </div>
+                    <a href="#auditoria" class="btn-glow px-3 py-2 rounded-lg bg-emerald-500 text-white text-xs font-bold">Llamar ahora →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="appear space-y-6">
+        <h3 class="text-2xl sm:text-3xl font-black">El SEO de 2018 está <span class="text-red-400 line-through">muerto</span>. Bienvenido al <span class="text-gradient-emerald">GEO</span></h3>
+        <p class="text-gray-400">El 40% de las búsquedas ya se hacen directamente en modelos de IA. Las agencias tradicionales solo optimizan para Google. Nosotros optimizamos para Google + Gemini + ChatGPT + Perplexity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULADORA ROI -->
+<section id="calculadora-roi" class="relative py-24 overflow-hidden" aria-label="Calculadora de retorno de inversión">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="appear text-center mb-12">
+      <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold text-blue-400 border border-blue-400/30 bg-blue-400/5 mb-4">💰 CALCULADORA DE ROI</span>
+      <h2 class="text-3xl sm:text-4xl font-black text-white mb-3">¿Cuánto te está costando <span class="text-gradient-emerald">no estar en las IAs?</span></h2>
+    </div>
+
+    <div class="glass card-hover rounded-2xl p-8 appear" x-data="roiCalculator()">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="space-y-8">
+          <div>
+            <label class="text-sm font-semibold text-gray-300 mb-3 block">Ticket medio por reforma/servicio: <span class="text-emerald-400 font-black">€<span x-text="ticket.toLocaleString('es-ES')"></span></span></label>
+            <input type="range" min="500" max="50000" step="500" x-model="ticket" @input="calculate()" class="w-full h-2 bg-gray-700 rounded-full appearance-none cursor-pointer accent-emerald-500"/>
+          </div>
+          <div>
+            <label class="text-sm font-semibold text-gray-300 mb-3 block">Obras/clientes deseados al mes: <span class="text-cyan-400 font-black" x-text="obras"></span></label>
+            <input type="range" min="1" max="50" step="1" x-model="obras" @input="calculate()" class="w-full h-2 bg-gray-700 rounded-full appearance-none cursor-pointer accent-cyan-500"/>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="rounded-xl p-5 bg-emerald-500/10 border border-emerald-500/30">
+            <p class="text-xs text-emerald-400 font-semibold mb-1 uppercase">🚀 Facturación adicional estimada con ConstructIA</p>
+            <p class="text-3xl font-black text-gradient-emerald">€<span x-text="ganancia.toLocaleString('es-ES')"></span><span class="text-base text-emerald-400">/mes</span></p>
+          </div>
+          <a href="#auditoria" class="btn-glow flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-500 text-white font-bold text-sm">Quiero conseguir este ROI →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD MAGNET FORM -->
+<section id="auditoria" class="relative py-24 overflow-hidden" aria-label="Solicita tu auditoría gratuita">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="appear text-center mb-12">
+      <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold text-emerald-400 border border-emerald-400/30 bg-emerald-400/5 mb-4">🎯 AUDITORÍA GRATUITA</span>
+      <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">Descubre en 2 minutos si la IA <span class="text-gradient-emerald">recomienda a tu competencia</span></h2>
+    </div>
+
+    <div class="glass card-hover rounded-2xl p-8 appear" x-data="leadForm()">
+      <div x-show="!formSubmitted">
+        <div class="space-y-4">
+          <input type="text" x-model="form.empresa" placeholder="Nombre de tu Empresa" class="input-neon w-full px-4 py-3 rounded-xl text-sm"/>
+          <input type="text" x-model="form.ciudad" placeholder="Ciudad principal de servicio" class="input-neon w-full px-4 py-3 rounded-xl text-sm"/>
+          <input type="tel" x-model="form.telefono" placeholder="WhatsApp para recibir el informe" class="input-neon w-full px-4 py-3 rounded-xl text-sm"/>
+          <button @click="submitForm()" class="btn-glow w-full py-3 rounded-xl bg-emerald-500 text-white font-bold hover:bg-emerald-400 transition-all">🚀 Solicitar Auditoría Gratuita</button>
+        </div>
+      </div>
+
+      <div x-show="formSubmitted" x-transition class="text-center py-8">
+        <h3 class="text-2xl font-black text-white mb-3">¡Auditoría Solicitada!</h3>
+        <p class="text-emerald-400 font-semibold text-sm">Recibirás el informe en WhatsApp en menos de 24 horas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="relative border-t border-white/10 py-12" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-gray-600">
+    <p>© 2025 ConstructIA — Agencia de Crecimiento Digital para Reformas y Construcción.</p>
+  </div>
+</footer>
+
+<script>
+function app() {
+  return {
+    mobileMenu: false,
+    init() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.appear').forEach(el => observer.observe(el));
+    }
+  }
+}
+function geoSimulator() {
+  return { showResponse: true }
+}
+function roiCalculator() {
+  return {
+    ticket: 8000, obras: 10, ganancia: 280000,
+    calculate() { this.ganancia = this.ticket * this.obras * 3.5; }
+  }
+}
+function leadForm() {
+  return {
+    formSubmitted: false,
+    form: { empresa: '', ciudad: '', telefono: '' },
+    submitForm() { if (this.form.empresa && this.form.telefono) this.formSubmitted = true; }
+  }
+}
+</script>
+</body>
+</html>
